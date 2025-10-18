@@ -153,10 +153,10 @@ BEGIN
 
 
 		SET @start_time = GETDATE()
-		PRINT	'>> Truncating Table: silver.erp_cust_az12';
-		TRUNCATE TABLE silver.erp_cust_az12
-		PRINT	'>> Inserting Data Into Table: silver.erp_cust_az12';
-		INSERT INTO silver.erp_cust_az12 (cid,bdate,gen)
+		PRINT	'>> Truncating Table: silver.erp_cus_az12';
+		TRUNCATE TABLE silver.erp_cus_az12
+		PRINT	'>> Inserting Data Into Table: silver.erp_cus_az12';
+		INSERT INTO silver.erp_cus_az12 (cid,bdate,gen)
 		SELECT
 			CASE 
 				WHEN cid LIKE 'NAS%' THEN SUBSTRING(cid, 4,LEN(cid))
@@ -230,4 +230,3 @@ BEGIN
 END
 
 
---EXEC silver.load_silver;
